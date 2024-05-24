@@ -14,4 +14,7 @@ public class Tracker
 
     public void Store(Expense expense)
         => repository.Store(expense);
+
+    public IEnumerable<Expense> RetrieveAllExpenses()
+        => repository.RetrieveAllExpenses();
 }
