@@ -22,6 +22,8 @@ public class ExpenseTrackerController(ExpensesRepository repository) : Controlle
     {
         tracker.Store(expense);
 
-        return CreatedAtAction(nameof(StoreExpense), expense);
+        //Habría que devolver un CreatedAtAction por convenio
+        //pero no tengo todavía manera de obtener concretamente el recurso creado
+        return Ok();
     }
 }
