@@ -11,13 +11,13 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
 {
     readonly Account account = new(repository);
 
-    [HttpGet(Name = "RetrieveAllTransactions")]
+    [HttpGet("RetrieveAllTransactions")]
     public ActionResult<IEnumerable<Transaction>> RetrieveAllTransactions()
     {
         return Ok(account.RetrieveAllTransactions());
     }
 
-    [HttpPost(Name = "AddExpense")]
+    [HttpPost("AddExpense")]
     public ActionResult<Transaction> AddExpense(int amount)
     {
         account.AddExpense(amount);
@@ -27,7 +27,7 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
         return Ok();
     }
     
-    [HttpPost(Name = "AddIncome")]
+    [HttpPost("AddIncome")]
     public ActionResult<Transaction> AddIncome(int amount)
     {
         account.AddIncome(amount);
