@@ -1,6 +1,6 @@
 namespace ExpenseTracker.Domain;
 
-public record Expense
+public record Transaction
 {
     public int Amount { get; init; }
 }

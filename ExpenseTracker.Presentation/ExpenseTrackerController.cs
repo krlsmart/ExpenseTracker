@@ -7,20 +7,20 @@ namespace ExpenseTracker.Presentation;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ExpenseTrackerController(ExpensesRepository repository) : ControllerBase
+public class ExpenseTrackerController(TransactionsRepository repository) : ControllerBase
 {
-    readonly Tracker tracker = new(repository);
+    readonly Account account = new(repository);
 
     [HttpGet(Name = "RetrieveAllExpenses")]
-    public ActionResult<IEnumerable<Expense>> RetrieveAllExpenses()
+    public ActionResult<IEnumerable<Transaction>> RetrieveAllExpenses()
     {
-        return Ok(tracker.RetrieveAllExpenses());
+        return Ok(account.RetrieveAllTransactions());
     }
 
     [HttpPost(Name = "StoreExpense")]
-    public ActionResult<Expense> StoreExpense(Expense expense)
+    public ActionResult<Transaction> StoreExpense(Transaction transaction)
     {
-        tracker.Store(expense);
+        account.AddExpense(transaction);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado

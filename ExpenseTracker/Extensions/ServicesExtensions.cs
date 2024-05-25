@@ -7,7 +7,7 @@ public static class ServicesExtensions
 {
     public static IServiceCollection AddExpenseTrackerServices(this IServiceCollection services)
     {
-        services.AddScoped<ExpensesRepository, InMemoryExpensesRepository>();
+        services.AddScoped<TransactionsRepository, InMemoryTransactionsRepository>();
 
         return services;
     }

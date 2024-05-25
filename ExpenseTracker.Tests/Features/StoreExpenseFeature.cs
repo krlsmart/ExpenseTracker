@@ -11,12 +11,12 @@ public class StoreExpenseFeature
     [Test]
     public void StoreExpense_WithAmount()
     {
-        var repository = Substitute.For<ExpensesRepository>();
-        var sut = new Tracker(repository);
-        var expense = new Expense { Amount = 100 };
+        var repository = Substitute.For<TransactionsRepository>();
+        var sut = new Account(repository);
+        var expense = new Transaction { Amount = 100 };
 
-        sut.Store(expense);
+        sut.AddExpense(expense);
 
-        repository.Received(1).Store(Arg.Is<Expense>(e => e == expense));
+        repository.Received(1).Store(Arg.Is<Transaction>(e => e == expense));
     }
 }
