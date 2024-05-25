@@ -7,9 +7,9 @@ namespace ExpenseTracker.Presentation;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ExpenseTrackerController(TransactionsRepository repository) : ControllerBase
+public class ExpenseTrackerController(TransactionsRepository repository, Clock clock) : ControllerBase
 {
-    readonly Account account = new(repository);
+    readonly Account account = new(repository, clock);
 
     [HttpGet("RetrieveAllTransactions")]
     public async Task<ActionResult<IEnumerable<Transaction>>> RetrieveAllTransactions()

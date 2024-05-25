@@ -8,6 +8,7 @@ public static class ServicesExtensions
     public static IServiceCollection AddExpenseTrackerServices(this IServiceCollection services)
     {
         services.AddScoped<TransactionsRepository, InMemoryTransactionsRepository>();
+        services.AddScoped<Clock, SystemClock>();
 
         return services;
     }
