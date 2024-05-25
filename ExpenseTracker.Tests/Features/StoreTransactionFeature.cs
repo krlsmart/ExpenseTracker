@@ -1,6 +1,7 @@
-﻿using ExpenseTracker.Application;
-using ExpenseTracker.Application.Ports;
+﻿using ExpenseTracker.Application.Ports;
 using ExpenseTracker.Domain;
+using ExpenseTracker.Tests.TestApi;
+using FluentAssertions.Extensions;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -12,9 +13,9 @@ public class StoreTransactionFeature
     public async Task AddExpense()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
-        var sut = new Account(repositoryMock);
+        var sut = BuilderFor.Account(repositoryMock);
 
-        await sut.AddExpense(100);
+        await sut.CreateAndStoreExpense(100);
 
         await repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == -100));
     }
@@ -23,9 +24,9 @@ public class StoreTransactionFeature
     public async Task AddIncome()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
-        var sut = new Account(repositoryMock);
+        var sut = BuilderFor.Account(repositoryMock);
 
-        await sut.AddIncome(250);
+        await sut.CreateAndStoreIncome(250);
 
         await repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == 250));
     }

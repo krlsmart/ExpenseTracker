@@ -1,6 +1,6 @@
-﻿using ExpenseTracker.Application;
-using ExpenseTracker.Application.Ports;
+﻿using ExpenseTracker.Application.Ports;
 using ExpenseTracker.Infrastructure;
+using ExpenseTracker.Tests.TestApi;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
@@ -13,7 +13,7 @@ public class RetrieveAllExpensesFeature
     public async Task RetrieveAllExpenses()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
-        var sut = new Account(repositoryMock);
+        var sut = BuilderFor.Account(repositoryMock);
         
         await sut.RetrieveAllTransactions();
         
@@ -24,7 +24,7 @@ public class RetrieveAllExpensesFeature
     [Test]
     public async Task RetrieveAllExpenses_FromInMemoryRepository()
     {
-        var sut = new Account(new InMemoryTransactionsRepository());
+        var sut = BuilderFor.Account(new InMemoryTransactionsRepository());
 
         await sut.CreateAndStoreExpense(100);
         await sut.CreateAndStoreExpense(500);

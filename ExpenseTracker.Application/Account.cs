@@ -8,7 +8,7 @@ public class Account
 {
     readonly TransactionsRepository repository;
 
-    public Account(TransactionsRepository repository)
+    public Account(TransactionsRepository repository, Clock clockStub)
     {
         this.repository = repository;
     }
