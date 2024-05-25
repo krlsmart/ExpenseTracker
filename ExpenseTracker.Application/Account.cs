@@ -18,6 +18,12 @@ public class Account
         repository.Store(transaction);
     }
 
+    public void AddIncome(int amount)
+    {
+        var transaction = new Transaction(amount);
+        repository.Store(transaction);
+    }
+    
     public IEnumerable<Transaction> RetrieveAllTransactions()
         => repository.RetrieveAll();
 }
