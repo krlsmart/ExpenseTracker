@@ -26,8 +26,8 @@ public class RetrieveAllExpensesFeature
     {
         var sut = new Account(new InMemoryTransactionsRepository());
 
-        await sut.AddExpense(100);
-        await sut.AddExpense(500);
+        await sut.CreateAndStoreExpense(100);
+        await sut.CreateAndStoreExpense(500);
         var result = await sut.RetrieveAllTransactions();
 
         result.Should().HaveCount(2);

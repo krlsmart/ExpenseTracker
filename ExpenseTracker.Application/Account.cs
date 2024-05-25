@@ -13,10 +13,10 @@ public class Account
         this.repository = repository;
     }
 
-    public Task AddExpense(int amount)
+    public Task CreateAndStoreExpense(int amount)
         => repository.Store(ExpenseFrom(amount));
 
-    public Task AddIncome(int amount)
+    public Task CreateAndStoreIncome(int amount)
         => repository.Store(IncomeFrom(amount));
 
     public Task<IEnumerable<Transaction>> RetrieveAllTransactions()

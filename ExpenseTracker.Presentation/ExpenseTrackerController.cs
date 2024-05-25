@@ -21,7 +21,7 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
     [HttpPost("AddExpense")]
     public async Task<ActionResult<Transaction>> AddExpense(int amount)
     {
-        await account.AddExpense(amount);
+        await account.CreateAndStoreExpense(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado
@@ -31,7 +31,7 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
     [HttpPost("AddIncome")]
     public async Task<ActionResult<Transaction>> AddIncome(int amount)
     {
-        await account.AddIncome(amount);
+        await account.CreateAndStoreIncome(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado
