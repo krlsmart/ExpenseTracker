@@ -7,9 +7,12 @@ public class InMemoryTransactionsRepository : TransactionsRepository
 {
     readonly List<Transaction> expenses = [];
     
-    public void Store(Transaction transaction)
-        => expenses.Add(transaction);
+    public Task Store(Transaction transaction)
+    {
+        expenses.Add(transaction);
+        return Task.CompletedTask; 
+    }
 
-    public IEnumerable<Transaction> RetrieveAll()
-        => expenses;
+    public Task<IEnumerable<Transaction>> RetrieveAll()
+        => Task.FromResult<IEnumerable<Transaction>>(expenses);
 }

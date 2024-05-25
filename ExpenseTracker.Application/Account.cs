@@ -13,12 +13,12 @@ public class Account
         this.repository = repository;
     }
 
-    public void AddExpense(int amount)
+    public Task AddExpense(int amount)
         => repository.Store(ExpenseFrom(amount));
 
-    public void AddIncome(int amount)
+    public Task AddIncome(int amount)
         => repository.Store(IncomeFrom(amount));
 
-    public IEnumerable<Transaction> RetrieveAllTransactions()
+    public Task<IEnumerable<Transaction>> RetrieveAllTransactions()
         => repository.RetrieveAll();
 }

@@ -12,15 +12,16 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
     readonly Account account = new(repository);
 
     [HttpGet("RetrieveAllTransactions")]
-    public ActionResult<IEnumerable<Transaction>> RetrieveAllTransactions()
+    public async Task<ActionResult<IEnumerable<Transaction>>> RetrieveAllTransactions()
     {
-        return Ok(account.RetrieveAllTransactions());
+        var allTransactions = await account.RetrieveAllTransactions();
+        return Ok(allTransactions);
     }
 
     [HttpPost("AddExpense")]
-    public ActionResult<Transaction> AddExpense(int amount)
+    public async Task<ActionResult<Transaction>> AddExpense(int amount)
     {
-        account.AddExpense(amount);
+        await account.AddExpense(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado
@@ -28,9 +29,9 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
     }
     
     [HttpPost("AddIncome")]
-    public ActionResult<Transaction> AddIncome(int amount)
+    public async Task<ActionResult<Transaction>> AddIncome(int amount)
     {
-        account.AddIncome(amount);
+        await account.AddIncome(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado

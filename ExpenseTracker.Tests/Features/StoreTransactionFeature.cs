@@ -9,24 +9,24 @@ namespace ExpenseTracker.Tests.Features;
 public class StoreTransactionFeature
 {
     [Test]
-    public void AddExpense()
+    public async Task AddExpense()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
         var sut = new Account(repositoryMock);
 
-        sut.AddExpense(100);
+        await sut.AddExpense(100);
 
-        repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == -100));
+        await repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == -100));
     }
     
     [Test]
-    public void AddIncome()
+    public async Task AddIncome()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
         var sut = new Account(repositoryMock);
 
-        sut.AddIncome(250);
+        await sut.AddIncome(250);
 
-        repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == 250));
+        await repositoryMock.Received(1).Store(Arg.Is<Transaction>(t => t.Amount == 250));
     }
 }

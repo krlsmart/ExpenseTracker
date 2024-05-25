@@ -1,6 +1,5 @@
 ﻿using ExpenseTracker.Application;
 using ExpenseTracker.Application.Ports;
-using ExpenseTracker.Domain;
 using ExpenseTracker.Infrastructure;
 using FluentAssertions;
 using NSubstitute;
@@ -11,24 +10,25 @@ namespace ExpenseTracker.Tests.Features;
 public class RetrieveAllExpensesFeature
 {
     [Test]
-    public void RetrieveAllExpenses()
+    public async Task RetrieveAllExpenses()
     {
         var repositoryMock = Substitute.For<TransactionsRepository>();
         var sut = new Account(repositoryMock);
         
-        sut.RetrieveAllTransactions();
+        await sut.RetrieveAllTransactions();
         
-        repositoryMock.Received(1).RetrieveAll();
+        await repositoryMock.Received(1).RetrieveAll();
     }
     
+    //TODO: Este test es bastante inutil. Borrar en cuanto se añada la bbdd real
     [Test]
-    public void RetrieveAllExpenses_FromInMemoryRepository()
+    public async Task RetrieveAllExpenses_FromInMemoryRepository()
     {
         var sut = new Account(new InMemoryTransactionsRepository());
 
-        sut.AddExpense(100);
-        sut.AddExpense(500);
-        var result = sut.RetrieveAllTransactions();
+        await sut.AddExpense(100);
+        await sut.AddExpense(500);
+        var result = await sut.RetrieveAllTransactions();
 
         result.Should().HaveCount(2);
     }
