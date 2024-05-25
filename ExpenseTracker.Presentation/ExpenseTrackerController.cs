@@ -11,16 +11,26 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
 {
     readonly Account account = new(repository);
 
-    [HttpGet(Name = "RetrieveAllExpenses")]
-    public ActionResult<IEnumerable<Transaction>> RetrieveAllExpenses()
+    [HttpGet(Name = "RetrieveAllTransactions")]
+    public ActionResult<IEnumerable<Transaction>> RetrieveAllTransactions()
     {
         return Ok(account.RetrieveAllTransactions());
     }
 
-    [HttpPost(Name = "StoreExpense")]
-    public ActionResult<Transaction> StoreExpense(int amount)
+    [HttpPost(Name = "AddExpense")]
+    public ActionResult<Transaction> AddExpense(int amount)
     {
         account.AddExpense(amount);
+
+        //Habría que devolver un CreatedAtAction por convenio
+        //pero no tengo todavía manera de obtener concretamente el recurso creado
+        return Ok();
+    }
+    
+    [HttpPost(Name = "AddIncome")]
+    public ActionResult<Transaction> AddIncome(int amount)
+    {
+        account.AddIncome(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado
