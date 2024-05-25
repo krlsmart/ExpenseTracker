@@ -12,8 +12,11 @@ public class Account
         this.repository = repository;
     }
 
-    public void AddExpense(Transaction transaction)
-        => repository.Store(transaction);
+    public void AddExpense(int amount)
+    {
+        var transaction = new Transaction(-amount);
+        repository.Store(transaction);
+    }
 
     public IEnumerable<Transaction> RetrieveAllTransactions()
         => repository.RetrieveAll();

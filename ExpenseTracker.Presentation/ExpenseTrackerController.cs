@@ -18,9 +18,9 @@ public class ExpenseTrackerController(TransactionsRepository repository) : Contr
     }
 
     [HttpPost(Name = "StoreExpense")]
-    public ActionResult<Transaction> StoreExpense(Transaction transaction)
+    public ActionResult<Transaction> StoreExpense(int amount)
     {
-        account.AddExpense(transaction);
+        account.AddExpense(amount);
 
         //Habría que devolver un CreatedAtAction por convenio
         //pero no tengo todavía manera de obtener concretamente el recurso creado
