@@ -1,5 +1,6 @@
 using ExpenseTracker.Application.Ports;
 using ExpenseTracker.Domain;
+using static ExpenseTracker.Domain.TransactionFactory;
 
 namespace ExpenseTracker.Application;
 
@@ -13,17 +14,11 @@ public class Account
     }
 
     public void AddExpense(int amount)
-    {
-        var transaction = new Transaction(-amount);
-        repository.Store(transaction);
-    }
+        => repository.Store(ExpenseFrom(amount));
 
     public void AddIncome(int amount)
-    {
-        var transaction = new Transaction(amount);
-        repository.Store(transaction);
-    }
-    
+        => repository.Store(IncomeFrom(amount));
+
     public IEnumerable<Transaction> RetrieveAllTransactions()
         => repository.RetrieveAll();
 }
