@@ -1,5 +1,15 @@
 @ExpenseTracker_HostAddress = http://localhost:5203
 
+### Send POST request with json body
+POST {{ExpenseTracker_HostAddress}}/api/ExpenseTracker/AddExpense
+Content-Type: application/json
+
+{
+  "amount": 500
+}
+
+###
+
 GET {{ExpenseTracker_HostAddress}}/api/ExpenseTracker/RetrieveAllTransactions
 Accept: application/json
 
