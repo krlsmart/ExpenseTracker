@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker", "ExpenseTracker\ExpenseTracker.csproj", "{59E6FDE3-79E4-4358-8D26-AE3DFA592B64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker", "src\ExpenseTracker\ExpenseTracker.csproj", "{59E6FDE3-79E4-4358-8D26-AE3DFA592B64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Domain", "ExpenseTracker.Domain\ExpenseTracker.Domain.csproj", "{789EEA4A-3063-434F-B15A-5E7593E19521}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Domain", "src\ExpenseTracker.Domain\ExpenseTracker.Domain.csproj", "{789EEA4A-3063-434F-B15A-5E7593E19521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Application", "ExpenseTracker.Application\ExpenseTracker.Application.csproj", "{0AABA8D1-B960-4DEF-9E51-CEB8740A6DBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Application", "src\ExpenseTracker.Application\ExpenseTracker.Application.csproj", "{0AABA8D1-B960-4DEF-9E51-CEB8740A6DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Infrastructure", "ExpenseTracker.Infrastructure\ExpenseTracker.Infrastructure.csproj", "{73F9309C-6F94-4D4F-9D44-186EF69A8253}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Infrastructure", "src\ExpenseTracker.Infrastructure\ExpenseTracker.Infrastructure.csproj", "{73F9309C-6F94-4D4F-9D44-186EF69A8253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Presentation", "ExpenseTracker.Presentation\ExpenseTracker.Presentation.csproj", "{B7B1E27C-8887-4508-8D3E-4A142AEF6152}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Presentation", "src\ExpenseTracker.Presentation\ExpenseTracker.Presentation.csproj", "{B7B1E27C-8887-4508-8D3E-4A142AEF6152}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Application.Tests", "tests\ExpenseTracker.Application.Tests\ExpenseTracker.Application.Tests.csproj", "{6E28CC01-59B2-4A17-910C-7E13ABEAEE47}"
 EndProject
