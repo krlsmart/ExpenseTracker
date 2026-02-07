@@ -3,7 +3,7 @@ using ExpenseTracker.Application.Ports;
 using ExpenseTracker.Domain;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ExpenseTracker.Presentation;
+namespace ExpenseTracker.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

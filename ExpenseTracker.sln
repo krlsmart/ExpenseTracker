@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Infrastructure", "src\ExpenseTracker.Infrastructure\ExpenseTracker.Infrastructure.csproj", "{73F9309C-6F94-4D4F-9D44-186EF69A8253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Presentation", "src\ExpenseTracker.Presentation\ExpenseTracker.Presentation.csproj", "{B7B1E27C-8887-4508-8D3E-4A142AEF6152}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Application.Tests", "tests\ExpenseTracker.Application.Tests\ExpenseTracker.Application.Tests.csproj", "{6E28CC01-59B2-4A17-910C-7E13ABEAEE47}"
 EndProject
 Global
@@ -34,10 +32,6 @@ Global
 		{73F9309C-6F94-4D4F-9D44-186EF69A8253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73F9309C-6F94-4D4F-9D44-186EF69A8253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73F9309C-6F94-4D4F-9D44-186EF69A8253}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7B1E27C-8887-4508-8D3E-4A142AEF6152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7B1E27C-8887-4508-8D3E-4A142AEF6152}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7B1E27C-8887-4508-8D3E-4A142AEF6152}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7B1E27C-8887-4508-8D3E-4A142AEF6152}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E28CC01-59B2-4A17-910C-7E13ABEAEE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E28CC01-59B2-4A17-910C-7E13ABEAEE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E28CC01-59B2-4A17-910C-7E13ABEAEE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
